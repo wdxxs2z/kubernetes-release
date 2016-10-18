@@ -1,0 +1,123 @@
+---
+packages:
+- name: guestbook-example
+  version: 61b0fbc56fef11fb30515c60f71db02d605d452c
+  fingerprint: 61b0fbc56fef11fb30515c60f71db02d605d452c
+  sha1: 9ee6f7a1a99c6304f2bf86c52446bb7b695701c5
+  dependencies: []
+- name: etcd-consistency-checker
+  version: 3cf9e965c6a4d31ff80ac7cc15f06bfabce90601
+  fingerprint: 3cf9e965c6a4d31ff80ac7cc15f06bfabce90601
+  sha1: 9741e44c1647282e0a7ccd53d50ee49ae93f10f7
+  dependencies:
+  - golang1.6
+- name: docker
+  version: 92abbbb0fb9750a696ea7b32584dcd0769271979
+  fingerprint: 92abbbb0fb9750a696ea7b32584dcd0769271979
+  sha1: bdd38fa19d545443fdadb22b457f795355642186
+  dependencies: []
+- name: bosh-helpers
+  version: 55717f488eb12fd47c95fd524ab1cd6304c7ce7e
+  fingerprint: 55717f488eb12fd47c95fd524ab1cd6304c7ce7e
+  sha1: b1e4eb91654729db0039b6d472f86117881104fc
+  dependencies: []
+- name: flannel
+  version: 1b5088fbb2c66562ac4d07da17595614c1686479
+  fingerprint: 1b5088fbb2c66562ac4d07da17595614c1686479
+  sha1: 50c7ac7d3bab5f34bccd1bd30fb9cb7cc2e8990c
+  dependencies:
+  - git
+  - golang
+- name: kubernetes
+  version: 705d7dadc679900f3a1ae23905977d3639d70059
+  fingerprint: 705d7dadc679900f3a1ae23905977d3639d70059
+  sha1: 3c79cbaa8fb9fa2a2a0bffde760343ed2c062820
+  dependencies:
+  - git
+  - golang1.6
+  - mercurial
+- name: common
+  version: a582714be57d8cfebe0e10099e2cd2d4b359a414
+  fingerprint: a582714be57d8cfebe0e10099e2cd2d4b359a414
+  sha1: 36aa6c5082b110dc76e2c8ed51ff6884a5557700
+  dependencies: []
+- name: mercurial
+  version: 0deb3f48206b4d4bd7aeb9e2f67ccc3371cce1df
+  fingerprint: 0deb3f48206b4d4bd7aeb9e2f67ccc3371cce1df
+  sha1: 61856005809e451d6c930e32ab47a41a894fce68
+  dependencies:
+  - python
+- name: etcd-dns-checker
+  version: 63d40f5231ffdbbadef25ec083a34a6f32a7324b
+  fingerprint: 63d40f5231ffdbbadef25ec083a34a6f32a7324b
+  sha1: 2e73536b9eb4b2ba9309684c40185542c1a59e1e
+  dependencies:
+  - golang1.6
+- name: python
+  version: 2ba6298a45ec74b87e1af08b9b49d7fb63d6b785
+  fingerprint: 2ba6298a45ec74b87e1af08b9b49d7fb63d6b785
+  sha1: d6c690ac76bc920477c26eff9790ab61d158ff3b
+  dependencies: []
+- name: git
+  version: 889205bef999ca6f078d4ee7b779186b45c1fa63
+  fingerprint: 889205bef999ca6f078d4ee7b779186b45c1fa63
+  sha1: acdfb4f4cfd4089ea5728fa59cf212ad1cf7308c
+  dependencies: []
+- name: etcd-common
+  version: 0f365b3a98184c2a6537efd51f67e8d5e9d2c486
+  fingerprint: 0f365b3a98184c2a6537efd51f67e8d5e9d2c486
+  sha1: 1ec523ba69877fb3b08e55d6f822d5f9eb9b008b
+  dependencies: []
+- name: golang
+  version: d3a4ac26953c7c2c5db712195f0e920401424663
+  fingerprint: d3a4ac26953c7c2c5db712195f0e920401424663
+  sha1: 34f3ab642bfc995c64da50ecd5624d6cfa12209e
+  dependencies: []
+- name: etcd
+  version: 015a370c4578c19dd3578329477b1f1a549f0c60
+  fingerprint: 015a370c4578c19dd3578329477b1f1a549f0c60
+  sha1: 903a7518923e2396ca45c58b60262d45a7993b5a
+  dependencies:
+  - golang1.6
+- name: golang1.6
+  version: d3a4ac26953c7c2c5db712195f0e920401424663
+  fingerprint: d3a4ac26953c7c2c5db712195f0e920401424663
+  sha1: a0e13af8742a4e614ee004df09db8eb5ecc08df4
+  dependencies: []
+jobs:
+- name: guestbook-example
+  version: f994ee0bc7ae569e158b855bc0e49b7bd4dc9fa0
+  fingerprint: f994ee0bc7ae569e158b855bc0e49b7bd4dc9fa0
+  sha1: 951920e5ba339cc70c7025bc9f7e2114e64d35c8
+- name: create-kubernetes-dns
+  version: 1f898ee26f32e26cac6ce7e4422349be6c0e5a4c
+  fingerprint: 1f898ee26f32e26cac6ce7e4422349be6c0e5a4c
+  sha1: b3a6d8a19f2379940c08ce1be0ba571f085909be
+- name: docker
+  version: 8e0639c196c377595c7eef6d4cd1f5ea56248c7c
+  fingerprint: 8e0639c196c377595c7eef6d4cd1f5ea56248c7c
+  sha1: f9c0a0bff9bc9c85199f57849170e12b800818ed
+- name: flannel
+  version: d241472cb68214a2ad0012958defcdf3a94d0c89
+  fingerprint: d241472cb68214a2ad0012958defcdf3a94d0c89
+  sha1: 6db240e3b3c660eb7365035e4552dfe0c5d83724
+- name: kubernetes-minion
+  version: 049fc5c310e6829f1a7c5398c16c3e398d51c984
+  fingerprint: 049fc5c310e6829f1a7c5398c16c3e398d51c984
+  sha1: c8ffbe4d9af2343ed2f801ae44ae2c80bd4535e8
+- name: kubernetes-master
+  version: 07474df5b6c730d1455b2c93cf35c781c604356a
+  fingerprint: 07474df5b6c730d1455b2c93cf35c781c604356a
+  sha1: 34555ee03a6fe6ba822f7ca364d5b7b47719de74
+- name: etcd
+  version: b42010525d91ad135415caacbf63d9eaaa6fd92a
+  fingerprint: b42010525d91ad135415caacbf63d9eaaa6fd92a
+  sha1: ce7ca39085b1558f29ff7df9e0ea19ce3a7f0f72
+license:
+  version: 0fbc9511a7e7f3a4d2f1af47f5ed327237b5f06c
+  fingerprint: 0fbc9511a7e7f3a4d2f1af47f5ed327237b5f06c
+  sha1: 8390a7c9448dc0de548a4ead1b0d6d548819597e
+commit_hash: 24e83b7d
+uncommitted_changes: true
+name: kubernetes
+version: '5'

@@ -47,3 +47,11 @@ golang1.6/go1.6.3.linux-amd64.tar.gz:
   object_id: df851c92-f68f-423e-be2b-0436e56be0ca
   sha: 5e916ba4dd8c2fc43beafca4c08b334c4d0686f3
   size: 84856920
+golang/go1.6.3.linux-amd64.tar.gz:
+  object_id: 6575b7e1-a86b-475c-b95f-3eb1ac068cd7
+  sha: 5e916ba4dd8c2fc43beafca4c08b334c4d0686f3
+  size: 84856920
+docker/docker-1.12.1:
+  object_id: 7125015d-8bab-4c00-9ffe-c1bf2cdc010e
+  sha: 0e5c910159f6910b6f472d5cfd174180355e9092
+  size: 15675272
