@@ -55,3 +55,7 @@ docker/docker-1.12.1:
   object_id: 7125015d-8bab-4c00-9ffe-c1bf2cdc010e
   sha: 0e5c910159f6910b6f472d5cfd174180355e9092
   size: 15675272
+kubernetes/kubernetes-server-linux-1.4.3-amd64.tar.gz:
+  object_id: 1cb7ce5b-3fa9-4b8d-888b-3821c335b0e5
+  sha: ef04fec7e902eff9ec71788501b71702518d5ac0
+  size: 352406724

@@ -6,5 +6,4 @@ dependencies:
   - mercurial
 files:
   - kubernetes/**/*
-excluded_files:
-  - kubernetes/Godeps/_workspace/src/github.com/fsouza/go-dockerclient/testing/data/symlink
+  - kubernetes/kubernetes-server-linux-1.4.3-amd64.tar.gz

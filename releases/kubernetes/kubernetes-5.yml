@@ -22,16 +22,16 @@ packages:
   sha1: b1e4eb91654729db0039b6d472f86117881104fc
   dependencies: []
 - name: flannel
-  version: 1b5088fbb2c66562ac4d07da17595614c1686479
-  fingerprint: 1b5088fbb2c66562ac4d07da17595614c1686479
-  sha1: 50c7ac7d3bab5f34bccd1bd30fb9cb7cc2e8990c
+  version: 650b7bdcc9afc09da82fee9d2a53f56cbdca82a3
+  fingerprint: 650b7bdcc9afc09da82fee9d2a53f56cbdca82a3
+  sha1: cd7c75f17a15524e777dc75bfb872e3de0161191
   dependencies:
   - git
   - golang
 - name: kubernetes
-  version: 705d7dadc679900f3a1ae23905977d3639d70059
-  fingerprint: 705d7dadc679900f3a1ae23905977d3639d70059
-  sha1: 3c79cbaa8fb9fa2a2a0bffde760343ed2c062820
+  version: 38466f65c87f400d810113c7eae1b0d3319c718e
+  fingerprint: 38466f65c87f400d810113c7eae1b0d3319c718e
+  sha1: d5e703e75f34ac4ca576a77d8eb92df97f3662ed
   dependencies:
   - git
   - golang1.6
@@ -74,9 +74,9 @@ packages:
   sha1: 34f3ab642bfc995c64da50ecd5624d6cfa12209e
   dependencies: []
 - name: etcd
-  version: 015a370c4578c19dd3578329477b1f1a549f0c60
-  fingerprint: 015a370c4578c19dd3578329477b1f1a549f0c60
-  sha1: 903a7518923e2396ca45c58b60262d45a7993b5a
+  version: 3d192622cb16273a2dbca5191554ab5f17833905
+  fingerprint: 3d192622cb16273a2dbca5191554ab5f17833905
+  sha1: 3649867c8270984d69a65cb4ead9991b0678f2e5
   dependencies:
   - golang1.6
 - name: golang1.6
@@ -117,7 +117,7 @@ license:
   version: 0fbc9511a7e7f3a4d2f1af47f5ed327237b5f06c
   fingerprint: 0fbc9511a7e7f3a4d2f1af47f5ed327237b5f06c
   sha1: 8390a7c9448dc0de548a4ead1b0d6d548819597e
-commit_hash: b9eab05a
+commit_hash: 183d0470
 uncommitted_changes: true
 name: kubernetes
 version: '5'

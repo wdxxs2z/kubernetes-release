@@ -1,13 +1,13 @@
 #!/bin/bash
 set -e -x
-export GOPATH=/var/vcap/data/tmp/go-tools
-mkdir -p $GOPATH
-export GOROOT=/var/vcap/packages/golang1.6
-export PATH=/var/vcap/packages/git/bin/:$GOROOT/bin:$GOPATH/bin:/var/vcap/packages/mercurial/bin:$PATH
-/var/vcap/packages/golang1.6/bin/go get github.com/tools/godep
-mkdir -p $GOPATH/src/github.com/GoogleCloudPlatform/
-cp -r kubernetes $GOPATH/src/github.com/GoogleCloudPlatform/
-cd $GOPATH/src/github.com/GoogleCloudPlatform/kubernetes
-godep go build ./...
-make all
-cp ./_output/local/bin/linux/amd64/* ${BOSH_INSTALL_TARGET}
+
+echo "Copying kubernetes..."
+
+tar zxvf ${BOSH_COMPILE_TARGET}/kubernetes/kubernetes-server-linux-1.4.3-amd64.tar.gz
+
+if [[ $? != 0 ]] ; then
+  echo "Failed extracting kubernetes server"
+  exit 1
+fi
+
+cp kubernetes/server/bin/{kube-apiserver,kube-controller-manager,kubectl,kube-proxy,kube-scheduler,kubelet} ${BOSH_INSTALL_TARGET}/
