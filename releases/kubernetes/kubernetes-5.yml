@@ -98,13 +98,13 @@ jobs:
   fingerprint: 8e0639c196c377595c7eef6d4cd1f5ea56248c7c
   sha1: f9c0a0bff9bc9c85199f57849170e12b800818ed
 - name: flannel
-  version: d241472cb68214a2ad0012958defcdf3a94d0c89
-  fingerprint: d241472cb68214a2ad0012958defcdf3a94d0c89
-  sha1: 6db240e3b3c660eb7365035e4552dfe0c5d83724
+  version: 141991d7f82d047e60a697872fec5dcd800fbd65
+  fingerprint: 141991d7f82d047e60a697872fec5dcd800fbd65
+  sha1: 41bf6c444cd964bf27fb65b8c827fd25dca9b863
 - name: kubernetes-minion
-  version: 049fc5c310e6829f1a7c5398c16c3e398d51c984
-  fingerprint: 049fc5c310e6829f1a7c5398c16c3e398d51c984
-  sha1: c8ffbe4d9af2343ed2f801ae44ae2c80bd4535e8
+  version: 88afec3305006e96fab13b380b83c12b97d8b21d
+  fingerprint: 88afec3305006e96fab13b380b83c12b97d8b21d
+  sha1: a36e901116b918384375cf30367b82defd10b875
 - name: kubernetes-master
   version: 07474df5b6c730d1455b2c93cf35c781c604356a
   fingerprint: 07474df5b6c730d1455b2c93cf35c781c604356a
@@ -117,7 +117,7 @@ license:
   version: 0fbc9511a7e7f3a4d2f1af47f5ed327237b5f06c
   fingerprint: 0fbc9511a7e7f3a4d2f1af47f5ed327237b5f06c
   sha1: 8390a7c9448dc0de548a4ead1b0d6d548819597e
-commit_hash: 24e83b7d
+commit_hash: b9eab05a
 uncommitted_changes: true
 name: kubernetes
 version: '5'
