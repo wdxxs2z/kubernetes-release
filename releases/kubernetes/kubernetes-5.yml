@@ -29,9 +29,9 @@ packages:
   - git
   - golang
 - name: kubernetes
-  version: 38466f65c87f400d810113c7eae1b0d3319c718e
-  fingerprint: 38466f65c87f400d810113c7eae1b0d3319c718e
-  sha1: d5e703e75f34ac4ca576a77d8eb92df97f3662ed
+  version: 79ae1dc1f768ee4227060290f9735711cff902ec
+  fingerprint: 79ae1dc1f768ee4227060290f9735711cff902ec
+  sha1: 8793998bc3f2430ff36469b3def986cdaadc0cb0
   dependencies:
   - git
   - golang1.6
@@ -117,7 +117,7 @@ license:
   version: 0fbc9511a7e7f3a4d2f1af47f5ed327237b5f06c
   fingerprint: 0fbc9511a7e7f3a4d2f1af47f5ed327237b5f06c
   sha1: 8390a7c9448dc0de548a4ead1b0d6d548819597e
-commit_hash: 183d0470
+commit_hash: fd614b02
 uncommitted_changes: true
 name: kubernetes
 version: '5'
