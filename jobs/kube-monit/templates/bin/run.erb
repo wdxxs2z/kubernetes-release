@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+PATH=$PATH:/var/vcap/packages/kubernetes
+API_HOST=<%= p('apiserver.host') %>
+
+kubectl -s http://${API_HOST}:8080 apply -f /var/vcap/jobs/kube-monit/heapster-deployment.yaml

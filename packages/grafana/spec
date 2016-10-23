@@ -1,0 +1,5 @@
+---
+name: grafana
+
+files:
+- grafana/*.tar.gz #Grafana v3.1.1

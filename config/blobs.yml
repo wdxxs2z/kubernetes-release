@@ -59,3 +59,23 @@ kubernetes/kubernetes-server-linux-1.4.3-amd64.tar.gz:
   object_id: 1cb7ce5b-3fa9-4b8d-888b-3821c335b0e5
   sha: ef04fec7e902eff9ec71788501b71702518d5ac0
   size: 352406724
+etcd/etcd-v2.3.5-linux-amd64.tar.gz:
+  object_id: 7f7d8870-98eb-423c-b57c-154df86c6da7
+  sha: be2edc1bb0cfec73ea5955adfb8d16b476a76e7c
+  size: 8543249
+docker/docker-1.12.1.tgz:
+  object_id: fa01b082-07b3-4f5a-b59c-216c7066cc84
+  sha: 00b961688d9b5b7d8580e75680d41a94c1110074
+  size: 28974177
+influxdb/influxdb-1.0.2_linux_amd64.tar.gz:
+  object_id: ab9a3383-161e-49e6-b542-36b47f60fc29
+  sha: a899e70046d91193cc92dc38af23f31840e24062
+  size: 17786632
+grafana/grafana-3.1.1-1470047149.linux-x64.tar.gz:
+  object_id: bdf0f7bc-a9a6-4f7f-971d-240481423696
+  sha: c281f6612ba93cd3233f70e45823adc7801d8cc1
+  size: 40570215
+influxdb/influxdb_0.9.4.1_x86_64.tar.gz:
+  object_id: 7e6b58e3-e7b6-4747-8d5e-39232448b89f
+  sha: 17dcf0aced633b7ac4de4618b6460669122893cc
+  size: 8353845

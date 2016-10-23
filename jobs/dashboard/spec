@@ -1,0 +1,12 @@
+---
+name: dashboard
+templates:
+  run.erb: bin/run
+  dashboard.yaml.erb: dashboard.yaml
+
+packages:
+  - kubernetes
+
+properties:
+  apiserver.host:
+    description: "The host running the apiserver to connect to"

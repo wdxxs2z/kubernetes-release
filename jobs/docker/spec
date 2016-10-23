@@ -61,3 +61,6 @@ properties:
   docker.daemon.logrotate.size:
     description: 'Size before Docker daemon log files are rotateds'
     default: '2M'
+  docker.insecure_registries:
+    description: 'Private docker registry insecure list'
+    default: []

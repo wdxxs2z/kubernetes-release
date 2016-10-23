@@ -1,0 +1,59 @@
+#!/bin/bash
+
+set -e # exit immediately if a simple command exits with a non-zero status
+set -u # report the usage of uninitialized variables
+
+# Setup env vars and folders for the webapp_ctl script
+source /var/vcap/jobs/influxdb/helpers/ctl_setup.sh 'influxdb'
+
+export LANG=en_US.UTF-8
+
+remove_pid() {
+    rm -f "${PIDFILE}"
+    rmdir "$(dirname "${PIDFILE}")" || :
+}
+
+
+ulimit -c unlimited
+exec >> /var/vcap/sys/log/influxdb/influxdb.ctl.log
+exec 2>&1
+
+case $1 in
+
+  start)
+    pid_guard $PIDFILE $JOB_NAME
+
+    /sbin/start-stop-daemon \
+      --pidfile "$PIDFILE" \
+      --chdir "$DATA_DIR" \
+      --start \
+      --quiet \
+      --chuid vcap:vcap \
+      --exec "/var/vcap/packages/influxdb/opt/influxdb/versions/0.9.4.1/influxd" \
+      -- -config "/var/vcap/jobs/influxdb/config/influxdb.conf" \
+         -pidfile "$PIDFILE" \
+      >> "$LOG_DIR"/$JOB_NAME.stdout.log \
+      2>> "$LOG_DIR"/$JOB_NAME.stderr.log \
+
+    ;;
+
+  stop)
+
+    /sbin/start-stop-daemon \
+      --pidfile "$PIDFILE" \
+      --signal TERM \
+      --oknodo \
+      --stop \
+      --retry 15
+  
+
+     remove_pid
+
+    ;;
+  *)
+    echo "Usage: influxdb_ctl {start|stop}"
+
+    ;;
+
+esac
+exit 0

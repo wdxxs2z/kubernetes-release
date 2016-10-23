@@ -1,0 +1,43 @@
+---
+name: influxdb
+templates:
+  bin/monit_debugger: bin/monit_debugger
+  bin/influxdb_ctl: bin/influxdb_ctl
+  config/influxdb.conf.erb: config/influxdb.conf
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+packages:
+- golang1.6
+- influxdb
+properties:
+#Cluster and leader def.
+  influxdb.cluster.is_leader:
+    description: True if the node is the leader node
+    default: false
+  influxdb.cluster.leader_address:
+    description: Hostname/IP to the leader/master of the cluster
+    default: 127.0.0.1
+  influxdb.admin_port:
+    description: Port for the admin interface
+    default: 8083  
+  influxdb.api_port:
+    description: Port the Api.
+    default: 8086
+  influxdb.data_port:
+    description: Port the Api.
+    default: 8086
+
+#Graphite settings
+  influxdb.graphite.enabled:
+    description: Graphite enabled status
+    default: true
+  influxdb.graphite.port:
+    description: Graphite communication Port
+    default: "25887"
+  influxdb.graphite.protocol:
+    description: Graphite network protocol
+    default: "udp"
+  influxdb.graphite.database:
+    description: Graphite database name
+    default: "graphite"

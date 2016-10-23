@@ -1,0 +1,5 @@
+---
+name: influxdb
+
+files:
+- influxdb/influxdb_0.9.4.1_x86_64.tar.gz

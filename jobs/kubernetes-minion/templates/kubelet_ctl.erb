@@ -26,6 +26,7 @@ JOB_DIR=/var/vcap/jobs/kubelet
 CERT_DIR=${RUN_DIR}/certs
 
 source /var/vcap/packages/common/utils.sh
+source /var/vcap/jobs/kubernetes-minion/config/env.sh
 
 case $1 in
 
@@ -37,17 +38,21 @@ case $1 in
 
     echo $$ > $PIDFILE
 
+    chmod +x /var/vcap/packages/kubernetes/kubelet
+
     <% my_ip = discover_external_ip %>
-    exec chpst -u vcap:vcap /var/vcap/packages/kubernetes/kubelet \
+    exec /var/vcap/packages/kubernetes/kubelet \
 --address=<%= my_ip %> \
+--allow-privileged=true \
 --port=10250 \
 --hostname_override=<%= my_ip %> \
---api-servers=http://<%= p('apiserver.host') %>:8080 \
+--api-servers=<%= p('apiserver.hosts').map { |h| "http://#{h}:8080" }.join ',' %> \
 --cert-dir=$CERT_DIR \
 --logtostderr=true \
 --docker-endpoint=unix:///var/vcap/sys/run/docker/docker.sock \
 --root-dir=/var/vcap/sys/run/kubelet \
 --pod-infra-container-image="index.tenxcloud.com/google_containers/pause:3.0" \
+--cloud-provider=<%= p('cloud-provider') %> \
 --cluster_dns=10.0.0.10 \
 --cluster_domain=cluster.local
     ;;

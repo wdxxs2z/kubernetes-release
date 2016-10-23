@@ -11,3 +11,5 @@ if [[ $? != 0 ]] ; then
 fi
 
 cp kubernetes/server/bin/{kube-apiserver,kube-controller-manager,kubectl,kube-proxy,kube-scheduler,kubelet,kube-dns,kubemark} ${BOSH_INSTALL_TARGET}/
+
+chmod -R +x ${BOSH_INSTALL_TARGET}/

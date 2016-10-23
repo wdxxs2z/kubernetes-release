@@ -51,13 +51,14 @@ case $1 in
     source /run/flannel/subnet.env
 
     # Start Docker daemon
-    exec chpst -u ${DOCKER_USER}:${DOCKER_GROUP} docker --daemon \
+    exec chpst -u ${DOCKER_USER}:${DOCKER_GROUP} docker daemon \
         --group ${DOCKER_GROUP} \
         --pidfile ${DOCKER_PID_FILE} \
         --graph ${DOCKER_STORE_DIR}/docker \
         --host unix://${DOCKER_PID_DIR}/docker.sock \
         --bip ${FLANNEL_SUBNET} \
         --mtu ${FLANNEL_MTU} \
+        --insecure-registry=<%= p("docker.insecure_registries").join(",") %> \
         ${DOCKER_TCP:-} \
         ${DOCKER_DEBUG:-} \
         ${DOCKER_API_ENABLE_CORS:-} \

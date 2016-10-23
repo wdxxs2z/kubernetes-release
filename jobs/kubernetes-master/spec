@@ -9,7 +9,41 @@ templates:
   apiserver_ctl.erb: bin/apiserver_ctl
   controller-manager_ctl.erb: bin/controller-manager_ctl
   scheduler_ctl.erb: bin/scheduler_ctl
+  config/token-auth.csv.erb: config/token-auth.csv
+  config/basic-auth.csv.erb: config/basic-auth.csv
+  config/certs/ca.pem.erb: config/certs/ca.pem
+  config/certs/kubernetes.pem.erb: config/certs/kubernetes.pem
+  config/certs/kubernetes-key.pem.erb: config/certs/kubernetes-key.pem
+  config/env.sh.erb: config/env.sh  
 
 properties:
   apiserver.machines:
     description: List of machines to schedule onto
+
+  etcd.machines:
+    description: List of machines to etcd onto
+
+  cloud-provider:
+    description: K8s cloud provider
+    default: ""
+
+  apiserver.basic-auth:
+    description: List of basic auth credentials
+    default: []
+
+  apiserver.token-auth:
+    description: List of authentication tokens
+    default: []
+
+  apiserver.certs.ca:
+    description: Kubernetes Certificate Authority certificate
+
+  apiserver.certs.kubernetes:
+    description: Kubernetes TLS certificate
+
+  apiserver.certs.kubernetes-key:
+    description: Kubernetes TLS private key
+
+  cloud-credentials.master:
+    description: K8s cloud provider master credentials
+    default: {}

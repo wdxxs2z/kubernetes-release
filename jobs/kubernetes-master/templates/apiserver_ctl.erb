@@ -3,26 +3,51 @@
 RUN_DIR=/var/vcap/sys/run/apiserver
 PIDFILE=$RUN_DIR/apiserver.pid
 JOB_DIR=/var/vcap/jobs/apiserver
-CERT_DIR=${RUN_DIR}/certs
+
+CONFIG_DIR=/var/vcap/jobs/kubernetes-master/config
+CERT_DIR=${CONFIG_DIR}/certs
 
 source /var/vcap/packages/common/utils.sh
+source ${CONFIG_DIR}/env.sh
+
+#kubernetes auth
+<% if('apiserver.basic-auth').length > 0 %>
+BASIC_AUTH_FILE="--basic-auth-file=${CONFIG_DIR}/basic-auth.csv"
+<% end %>
+<% if('apiserver.token-auth').length > 0 %>
+TOKEN_AUTH_FILE="--token-auth-file=${CONFIG_DIR}/token-auth.csv"
+<% end %>
+
 
 case $1 in
 
   start)
     pid_guard $PIDFILE "apiserver"
 
+    mkdir -p $RUN_DIR
     mkdir -p $CERT_DIR
+
     chown -R vcap:vcap $RUN_DIR
 
     echo $$ > $PIDFILE
 
-    exec chpst -u vcap:vcap /var/vcap/packages/kubernetes/kube-apiserver \
+    chmod +x /var/vcap/packages/kubernetes/kube-apiserver
+
+    exec /var/vcap/packages/kubernetes/kube-apiserver \
+--admission-control=NamespaceLifecycle,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota \
+--cert-dir=${CERT_DIR} \
+--service-account-key-file=${CERT_DIR}/kubernetes-key.pem \
+--tls-cert-file=${CERT_DIR}/kubernetes.pem \
+--tls-private-key-file=${CERT_DIR}/kubernetes-key.pem \
+${BASIC_AUTH_FILE:-} \
+${TOKEN_AUTH_FILE:-} \
+--allow-privileged=true \
+--apiserver-count=<%= p('apiserver.machines').length %> \
+--cloud-provider=<%= p('cloud-provider') %> \
+--etcd-servers=<%= p('etcd.machines').map { |h| "http://#{h}:4001" }.join ',' %> \
 --insecure-bind-address=0.0.0.0 \
---port=8080 \
---etcd-servers=http://127.0.0.1:4001 \
+--insecure-port=8080 \
 --service-cluster-ip-range="10.0.0.0/24" \
---cert-dir=$CERT_DIR \
 --logtostderr=true
     ;;
 
