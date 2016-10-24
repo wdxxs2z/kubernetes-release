@@ -1,4 +1,8 @@
 # abort script on any command that exits with a non zero value
 set -e
 
-tar --strip-components=1 -zxf influxdb/influxdb*.tar.gz -C ${BOSH_INSTALL_TARGET}
+tar -zxf influxdb/influxdb*.tar.gz
+
+cp -a influxdb_0.9.4.1_x86_64/opt/influxdb/versions/0.9.4.1/* ${BOSH_INSTALL_TARGET}/
+
+chmod -R +x ${BOSH_INSTALL_TARGET}/

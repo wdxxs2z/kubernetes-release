@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
       - name: kubernetes-dashboard
-        image: index.tenxcloud.com/google_containers/kubernetes-dashboard-amd64:v1.4.1
+        image: <%= p('dashboard.images.ui') %> 
         imagePullPolicy: Always
         ports:
         - containerPort: 9090

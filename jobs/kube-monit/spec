@@ -24,3 +24,11 @@ properties:
 
   eventer.sink:
     description: Where heapster sends event data
+
+  heapster.images.core:
+    description: The heapster core image
+    default: index.tenxcloud.com/google_containers/heapster:v1.2.0-beta.0
+
+  heapster.images.nanny:
+    description: The heapster nanny image
+    default: index.tenxcloud.com/google_containers/addon-resizer:1.3

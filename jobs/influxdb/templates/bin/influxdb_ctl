@@ -29,7 +29,7 @@ case $1 in
       --start \
       --quiet \
       --chuid vcap:vcap \
-      --exec "/var/vcap/packages/influxdb/opt/influxdb/versions/0.9.4.1/influxd" \
+      --exec "/var/vcap/packages/influxdb/influxd" \
       -- -config "/var/vcap/jobs/influxdb/config/influxdb.conf" \
          -pidfile "$PIDFILE" \
       >> "$LOG_DIR"/$JOB_NAME.stdout.log \

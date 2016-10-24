@@ -10,3 +10,7 @@ packages:
 properties:
   apiserver.host:
     description: "The host running the apiserver to connect to"
+ 
+  dashboard.images.ui:
+    description: "Kubernetes dashboard ui image"
+    default: "index.tenxcloud.com/google_containers/kubernetes-dashboard-amd64:v1.4.1"
